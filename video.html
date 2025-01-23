@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Video</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f8fc;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 15%;
+            background-color: #4c4c9d;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            color: #ccccff;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 85%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .video-section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section video {
+            width: 100%;
+            height: auto;
+        }
+
+        .back-button {
+            padding: 10px 15px;
+            background-color: #4c4c9d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .back-button:hover {
+            background-color: #6f6fc4;
+        }
+    </style>
+    <script>
+        // Retrieve the course name from the query parameter
+        function getCourseName() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('course') || 'Course Video';
+        }
+
+        // Navigate back to the course list
+        function goBack() {
+            window.location.href = 'courseui.html';
+        }
+    </script>
+</head>
+<body onload="document.getElementById('course-name').innerText = getCourseName()">
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home Icon">
+            <a href="#">Dashboard</a>
+            <a href="#">Courses</a>
+            <a href="#">Resources</a>
+            <a href="#">Settings</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <button class="back-button" onclick="goBack()">Back to Courses</button>
+            <h2 id="course-name"></h2>
+            <div class="video-section">
+                <!-- Placeholder for adding custom video -->
+                <video controls>
+                    <source src="your-video.mp4" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
