@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses UI</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f8fc;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 15%;
+            background-color: #4c4c9d;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar img {
+            width: 50px;
+            margin-bottom: 20px;
+        }
+
+        .sidebar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .sidebar a:hover {
+            color: #ccccff;
+        }
+
+        /* Main Content */
+        .main-content {
+            width: 85%;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .course-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-card h3 {
+            margin: 0;
+            color: #4c4c9d;
+        }
+
+        .course-card p {
+            margin: 5px 0 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .view-button {
+            padding: 10px 15px;
+            background-color: #4c4c9d;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .view-button:hover {
+            background-color: #6f6fc4;
+        }
+    </style>
+    <script>
+        function goToVideo(course) {
+            // Redirect to video.html and pass the course name as a query parameter
+            window.location.href = `video.html?course=${encodeURIComponent(course)}`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/home.png" alt="Home Icon">
+            <a href="#">Dashboard</a>
+            <a href="#">Courses</a>
+            <a href="#">Resources</a>
+            <a href="#">Settings</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <h2>My Courses</h2>
+            <div class="course-card">
+                <div>
+                    <h3>Operating System</h3>
+                    <p>Learn the basics of operating systems.</p>
+                </div>
+                <button class="view-button" onclick="goToVideo('Operating System')">View More</button>
+            </div>
+            <div class="course-card">
+                <div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>Learn the fundamentals of AI and ML.</p>
+                </div>
+                <button class="view-button" onclick="goToVideo('Artificial Intelligence')">View More</button>
+            </div>
+            <div class="course-card">
+                <div>
+                    <h3>Software Engineering</h3>
+                    <p>Learn the principles of software development.</p>
+                </div>
+                <button class="view-button" onclick="goToVideo('Software Engineering')">View More</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
